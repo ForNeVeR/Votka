@@ -12,6 +12,13 @@ Build
 $ dotnet build
 ```
 
+Test
+----
+
+```console
+$ dotnet test Votka.Tests
+```
+
 [andivionian-status-classifier]: https://github.com/ForNeVeR/andivionian-status-classifier#status-zero-
 [build-appveyor]: https://ci.appveyor.com/project/ForNeVeR/votka/branch/master
 [net-core-sdk]: https://www.microsoft.com/net/download/core#/sdk
