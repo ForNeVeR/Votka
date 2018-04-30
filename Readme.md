@@ -19,6 +19,17 @@ Test
 $ dotnet test Votka.Tests
 ```
 
+License
+-------
+
+For this project's source code and binaries license, see [License.md][license].
+Some of the samples in [Votka.Tests/Data][test-data] directory's subdirectories
+are licensed under their own terms. In that case, check `Readme.md` file in the
+file directory.
+
+[license]: License.md
+[test-data]: Votka.Tests/Data
+
 [andivionian-status-classifier]: https://github.com/ForNeVeR/andivionian-status-classifier#status-zero-
 [build-appveyor]: https://ci.appveyor.com/project/ForNeVeR/votka/branch/master
 [net-core-sdk]: https://www.microsoft.com/net/download/core#/sdk
