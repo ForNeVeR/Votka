@@ -25,7 +25,7 @@ License
 For this project's source code and binaries license, see [License.md][license].
 Some of the samples in [Votka.Tests/Data][test-data] directory's subdirectories
 are licensed under their own terms. In that case, check `Readme.md` file in the
-file directory.
+subdirectory.
 
 [license]: License.md
 [test-data]: Votka.Tests/Data
