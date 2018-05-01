@@ -13,3 +13,4 @@ build_script:
     - dotnet build
 test_script:
     - dotnet test Votka.Tests
+    - dotnet run --project Votka.Tests.Activiz

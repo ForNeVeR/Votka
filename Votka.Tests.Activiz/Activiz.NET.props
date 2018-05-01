@@ -1,0 +1,19 @@
+<Project>
+  <!-- Activiz.NET setup. It's a bit messy because of the issues with old package content not being copied to the
+       project output directory. -->
+  <PropertyGroup>
+    <ActivizNetPackage>Activiz.NET.x64</ActivizNetPackage>
+    <ActivizNetVersion>5.8.0</ActivizNetVersion>
+    <ActivizNetPackagePath>$(NuGetPackageRoot)\$(ActivizNetPackage)\$(ActivizNetVersion)</ActivizNetPackagePath>
+    <ActivizNetContents>$(ActivizNetPackagePath)\lib\net20\*.dll</ActivizNetContents>
+    <!-- Some of the libraries mess up with dotnet test, so exclude them -->
+    <ActivizNetExclude>$(ActivizNetPackagePath)\lib\net20\msvc?90.dll</ActivizNetExclude>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="$(ActivizNetPackage)" Version="$(ActivizNetVersion)"/>
+    <Content CopyToOutputDirectory="Always" Include="$(ActivizNetContents)">
+      <Visible>false</Visible>
+    </Content>
+    <Content Remove="$(ActivizNetExclude)" />
+  </ItemGroup>
+</Project>

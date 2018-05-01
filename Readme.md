@@ -17,6 +17,7 @@ Test
 
 ```console
 $ dotnet test Votka.Tests
+$ dotnet run --project Votka.Tests.Activiz
 ```
 
 License
