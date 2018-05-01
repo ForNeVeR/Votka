@@ -1,10 +1,8 @@
-module Tests
+module Votka.Tests.Activiz.Tests
 
 open System
-open System.Threading
 open System.IO
 open System.Reflection
-open System.Runtime.InteropServices
 
 open Kitware.VTK
 open Xunit
@@ -22,6 +20,8 @@ let ``hello.vtk parsing results should be analogous`` () =
     use reader = vtkDataSetReader.New()
     reader.SetFileName(getVtkDataPath "hello.vtk")
     reader.Update()
-    let output = reader.GetOutput()
+    let output = vtkPolyData.SafeDownCast <| reader.GetOutput()
+    let polygonalData = Utils.getPolygonalData output
 
-    Assert.NotNull output
+    printfn "%A" polygonalData
+    Assert.NotNull polygonalData
