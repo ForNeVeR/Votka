@@ -23,7 +23,7 @@ let private getPoint (dataSet : vtkDataSet) index =
 let private getDataValue (data : vtkIdTypeArray) index =
     data.GetValue(int64 index)
 
-let getPolygonalData (dataSet : vtkPolyData) : PolygonalData<float> =
+let getPolygonalData (dataSet : vtkPolyData) : PolygonalData =
     let pointCount = Checked.int <| dataSet.GetNumberOfPoints()
 
     let points =
@@ -37,7 +37,7 @@ let getPolygonalData (dataSet : vtkPolyData) : PolygonalData<float> =
         |> Seq.toArray
 
     { PolygonalData.empty with
-        points = points
+        points = PointCollection points
         lines = lines }
 
 
